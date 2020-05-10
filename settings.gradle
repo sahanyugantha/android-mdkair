@@ -1,0 +1,2 @@
+rootProject.name='MDK Bookings'
+include ':app'
