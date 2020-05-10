@@ -16,6 +16,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sahan.mdkbookings.database.UserDao;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "customTag";
@@ -25,16 +27,35 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.i(TAG, "onCreate");
+        Button btnLogin = (Button) findViewById(R.id.btnLogin);
+        final EditText etEmail = (EditText) findViewById(R.id.etEmail);
+        final EditText etPass = (EditText) findViewById(R.id.etPass);
 
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String email =  etEmail.getText().toString();
+                String password = etPass.getText().toString();
+
+                UserDao userDao = new UserDao();
+                boolean result = userDao.LoginChecker(email, password);
+
+                if(result){
+                    Toast.makeText(getApplicationContext(), "Successfully logged in", Toast.LENGTH_SHORT).show();
+                } else{
+                    Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -50,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 //Opening AboutActivity
                 Intent intentAbout = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(intentAbout);
-
                 break;
 
             case R.id.menuHelp:
@@ -59,9 +79,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menuSetting:
                 Toast.makeText(getApplicationContext(), "Settings will be open", Toast.LENGTH_SHORT).show();
                 break;
-
         }
-
 
         return super.onOptionsItemSelected(item);
     }
