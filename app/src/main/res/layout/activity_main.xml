@@ -26,6 +26,7 @@
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
             android:textColor="#ffffff"
+            android:text="admin@bcas.lk"
             android:textSize="24sp"/>
 
         <TextView
@@ -41,6 +42,7 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:textColor="#ffffff"
+            android:text="123"
             android:textSize="24sp"/>
 
         <Button

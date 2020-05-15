@@ -43,6 +43,12 @@ public class MainActivity extends AppCompatActivity {
 
                 if(result){
                     Toast.makeText(getApplicationContext(), "Successfully logged in", Toast.LENGTH_SHORT).show();
+
+                    Intent intentHome = new Intent(getApplicationContext(), HomeActivity.class);
+                    intentHome.putExtra("email", email);
+                    intentHome.putExtra("name", "John");
+                    startActivity(intentHome);
+
                 } else{
                     Toast.makeText(getApplicationContext(), "Authentication failed", Toast.LENGTH_SHORT).show();
                 }
@@ -50,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
 
     @Override
