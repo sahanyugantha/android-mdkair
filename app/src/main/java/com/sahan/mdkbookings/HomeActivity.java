@@ -1,10 +1,14 @@
 package com.sahan.mdkbookings;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.widget.TextView;
+
+import com.google.android.material.tabs.TabLayout;
+import com.sahan.mdkbookings.adpater.HomePagerAdapter;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -13,11 +17,15 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        String name = getIntent().getStringExtra("name");
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.homeTabLayout);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.homeViewPager);
 
-        TextView tvWelcome = (TextView) findViewById(R.id.tvWelcomeMsg);
+        HomePagerAdapter homePagerAdapter = new HomePagerAdapter(getSupportFragmentManager(), 1);
+        viewPager.setAdapter(homePagerAdapter);
 
-        tvWelcome.setText("Welcome back "+name);
+        tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     @Override
