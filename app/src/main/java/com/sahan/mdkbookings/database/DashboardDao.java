@@ -1,23 +1,33 @@
 package com.sahan.mdkbookings.database;
 
-import com.sahan.mdkbookings.Dashboard;
+import com.sahan.mdkbookings.model.Dashboard;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 public class DashboardDao {
 
-    public DashboardDao() {
+    private static DashboardDao myInstance = new DashboardDao();;
+
+    private DashboardDao() {
+    }
+
+    public static DashboardDao getInstance(){
+        return myInstance;
     }
 
     public List<Dashboard> getAll(){
 
         List<Dashboard> dashboardList = new ArrayList<>();
 
-        Dashboard dashboard1 = new Dashboard(1, "Sri Lankan", "UL 309", "Departure", "CMB", "WHN", "2020-05-15 11:30:00");
-        dashboardList.add(dashboard1);
-        Dashboard dashboard2 = new Dashboard(1, "Emirate", "EM 2333", "Transit", "DOHA", "MLBN", "2020-05-15 11:50:00");
-        dashboardList.add(dashboard2);
+        DashboardAsyncTask dashboardAsyncTask = new DashboardAsyncTask();
+        try {
+            dashboardList =  dashboardAsyncTask.execute().get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
 
         return dashboardList;
 

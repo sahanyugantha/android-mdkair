@@ -1,4 +1,4 @@
-package com.sahan.mdkbookings;
+package com.sahan.mdkbookings.model;
 
 public enum USER_ROLES {
 

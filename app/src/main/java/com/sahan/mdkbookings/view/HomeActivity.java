@@ -1,4 +1,4 @@
-package com.sahan.mdkbookings;
+package com.sahan.mdkbookings.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
+import com.sahan.mdkbookings.R;
 import com.sahan.mdkbookings.adpater.HomePagerAdapter;
 
 public class HomeActivity extends AppCompatActivity {

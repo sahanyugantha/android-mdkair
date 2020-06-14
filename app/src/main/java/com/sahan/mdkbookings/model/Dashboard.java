@@ -1,4 +1,4 @@
-package com.sahan.mdkbookings;
+package com.sahan.mdkbookings.model;
 
 public class Dashboard {
     //id, company, flight_no, type, from, to, time
@@ -20,6 +20,13 @@ public class Dashboard {
         this.flight_no = flight_no;
         this.type = type;
         this.from = from;
+        this.to = to;
+        this.time = time;
+    }
+
+    public Dashboard(String company, String flight_no, String to, String time) {
+        this.company = company;
+        this.flight_no = flight_no;
         this.to = to;
         this.time = time;
     }

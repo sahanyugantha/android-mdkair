@@ -1,7 +1,5 @@
 package com.sahan.mdkbookings.database;
 
-import com.sahan.mdkbookings.User;
-
 public class UserDao {
 
 

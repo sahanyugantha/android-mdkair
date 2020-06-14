@@ -1,17 +1,14 @@
 package com.sahan.mdkbookings.adpater;
 
-import android.view.View;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
-import androidx.viewpager.widget.PagerAdapter;
 
-import com.sahan.mdkbookings.DashboardFragment;
-import com.sahan.mdkbookings.HistoryFragment;
-import com.sahan.mdkbookings.HotDealsFragment;
+import com.sahan.mdkbookings.view.DashboardFragment;
+import com.sahan.mdkbookings.view.HistoryFragment;
+import com.sahan.mdkbookings.view.HotDealsFragment;
 
 public class HomePagerAdapter extends FragmentPagerAdapter {
 

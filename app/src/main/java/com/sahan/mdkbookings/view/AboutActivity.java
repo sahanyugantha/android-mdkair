@@ -1,9 +1,11 @@
-package com.sahan.mdkbookings;
+package com.sahan.mdkbookings.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
+
+import com.sahan.mdkbookings.R;
 
 public class AboutActivity extends AppCompatActivity {
 
