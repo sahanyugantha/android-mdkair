@@ -54,7 +54,7 @@ public class HotDealsFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         return view;
-        
+
     }
 
     //Simulate Method DB transaction.
