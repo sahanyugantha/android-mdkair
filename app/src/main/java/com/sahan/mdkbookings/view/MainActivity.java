@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button btnLogin = (Button) findViewById(R.id.btnLogin);
-        final EditText etEmail = (EditText) findViewById(R.id.etEmail);
-        final EditText etPass = (EditText) findViewById(R.id.etPass);
+        Button btnLogin = (Button) findViewById(R.id.btnSignIn);
+        final EditText etEmail = (EditText) findViewById(R.id.txtEmail);
+        final EditText etPass = (EditText) findViewById(R.id.txtPassword);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
                     Intent intentHome = new Intent(getApplicationContext(), HomeActivity.class);
                     intentHome.putExtra("email", email);
-                    intentHome.putExtra("name", "John");
                     startActivity(intentHome);
 
                 } else{

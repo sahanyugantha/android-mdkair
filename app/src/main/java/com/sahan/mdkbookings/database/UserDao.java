@@ -1,5 +1,7 @@
 package com.sahan.mdkbookings.database;
 
+import com.sahan.mdkbookings.model.User;
+
 public class UserDao {
 
 
@@ -8,11 +10,16 @@ public class UserDao {
         String u_email = "admin@bcas.lk";
         String u_password = "123";
 
-        if(email.equals(u_email) && password.equals(u_password)){
-            return true;
-        } else {
-            return false;
+        try {
+
+            LoginAsyncTask loginAsyncTask = new LoginAsyncTask("rezaan@oulook.com", "123");
+            User user = loginAsyncTask.execute().get();
+
+        } catch (Exception ex){
+            ex.printStackTrace();
         }
+
+      return false;
     }
 
 

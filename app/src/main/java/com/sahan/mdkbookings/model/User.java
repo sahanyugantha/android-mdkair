@@ -7,16 +7,18 @@ public class User {
     private String email;
     private String password;
     private USER_ROLES roles;
+    private boolean logged_in;
 
     public User() {
     }
 
-    public User(int id, String username, String email, String password, USER_ROLES roles) {
+    public User(int id, String username, String email, String password, USER_ROLES roles, boolean logged_in) {
         this.id = id;
         this.username = username;
         this.email = email;
         this.password = password;
         this.roles = roles;
+        this.logged_in = logged_in;
     }
 
     public int getId() {
@@ -57,5 +59,13 @@ public class User {
 
     public void setRoles(USER_ROLES roles) {
         this.roles = roles;
+    }
+
+    public boolean isLogged_in() {
+        return logged_in;
+    }
+
+    public void setLogged_in(boolean logged_in) {
+        this.logged_in = logged_in;
     }
 }
